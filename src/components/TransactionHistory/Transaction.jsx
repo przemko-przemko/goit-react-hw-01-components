@@ -4,7 +4,7 @@ import transaction from "./transaction.json"
 
 const Transaction = () => {
   return (
-    <TransactionItem transaction={transaction}/>
+    <TransactionItem transaction={transaction} title="Transaction History"/>
   )
 }
 
