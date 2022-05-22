@@ -1,30 +1,30 @@
 import React from "react";
+import {List, Wrapper,ListItem } from "./Statistics_styles"
 
 const StatisticsItem = ({ data, title = "", randomColor }) => {
   console.log(data);
   console.log(randomColor);
   return (
-    <section>
+    <Wrapper>
       {title !== "" && <h2>{title}</h2>}
-      <ul>
+      <List>
         {data.map(({ id, label, percentage }) => {
           return (
-            <li
+            <ListItem
               key={id}
               style={{
                 width: `${percentage}%`,
-                border: `solid 3px ${randomColor()}`,
                 background: `${randomColor()}`,
               }}
             >
               <span>{label}</span>
               <br></br>
               <span>{percentage}%</span>
-            </li>
+            </ListItem>
           );
         })}
-      </ul>
-    </section>
+      </List>
+    </Wrapper>
   );
 };
 

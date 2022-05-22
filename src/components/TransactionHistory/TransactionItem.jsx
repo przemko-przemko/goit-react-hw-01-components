@@ -1,35 +1,15 @@
 import React from 'react'
-import styled from "styled-components"
+import { Table,TRow, TData, TheadStyled } from "./Transaction_styles"
 
 
-const TheadStyled  = styled.thead`
-background-color: rgb(179, 103, 52);
-`
-const TData = styled.td`
-    padding: 15px;
-  border: 1px solid rgba(85, 71, 71, 0.561);
-`
-const TRow = styled.tr`
-    :nth-child(even) {
-  background-color: #fff
-    }
-  `
-  const Table = styled.table`
-      width: 50%;
-  font-size: 25px;
-  border-collapse: collapse;
-  background-color: rgba(196, 171, 104, 0.933);
-  color: #001234;
-  border: 2px solid rgb(0, 0, 0);
-  margin-bottom: 20px;
-  `
+
     
 
 const THead = ({title}) => {
     console.log(title)
     return(
     <>
-        {title === "Transaction History" ? <h2>{title}</h2> : <h2>Error with fetch title</h2> }   
+         
         <TheadStyled>
     <TRow>
       <th>Type</th>
@@ -59,10 +39,14 @@ const TBody = ({transaction}) =>{
 const TransactionItem = ({transaction, title = ""}) => {
     console.log(transaction)
   return (
+    <>
+    {title === "Transaction History" ? <h2>{title}</h2> : <h2>Error with fetch title</h2> }  
       <Table>
+        
    <THead title={title}/>
        <TBody transaction={transaction}/>
    </Table>
+   </>
   )
 }
 

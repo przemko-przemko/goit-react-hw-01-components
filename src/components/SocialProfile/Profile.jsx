@@ -1,18 +1,18 @@
 import React from 'react'
+import { Wrapper, Image, UserParagraph} from "./Profile_styles"
 
 const Profile = ({userData}) => {
     const { avatar,location, username, tag } = userData
     console.log(avatar)
   return (
-    <div >
-    <div >
-      <img src={avatar} alt={username}
+    
+    <Wrapper >
+      <Image src={avatar} alt={username}
       />
-      <p>{username}</p>
-      <p>{tag}</p>
-      <p>{location}</p>
-    </div>
-    </div>
+      <UserParagraph>{username}</UserParagraph>
+      <UserParagraph>{tag}</UserParagraph>
+      <UserParagraph>{location}</UserParagraph>
+    </Wrapper>
   )
 }
 

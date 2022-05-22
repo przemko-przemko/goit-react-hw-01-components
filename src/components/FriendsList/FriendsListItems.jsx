@@ -1,17 +1,18 @@
 import React from 'react'
+import { SpanOffline,SpanOnline, ListItem } from "./FriendslistItems_styled"
 
-const FriendsListItem = ({avatar, name, isOnline, key}) =>{
+const FriendsListItem = ({avatar, name, isOnline, id}) =>{
   return(
-    <li>
-      <span className={isOnline? "online" : "offline"}></span>
+    <ListItem key={id}>
+      <span></span>
+      {isOnline? <SpanOnline/> : <SpanOffline/>}
       <img src={avatar} alt={name} />
       <span>{name}</span>
-    </li>
+    </ListItem>
   )
 }
 
 const FriendsListItems = ({friends}) => {
-    console.log(friends)
   return (
 <ul>
    {friends.map(({avatar, name, isOnline, id}) =>{
